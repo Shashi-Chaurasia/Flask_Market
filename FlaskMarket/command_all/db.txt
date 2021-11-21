@@ -1,0 +1,28 @@
+# >>> i1 = Item(name="Iphone13",price=1000,barcode="123",description="iphone 13 pro")
+# >>> db.session.add(i1) 
+# >>> db.session.commit()
+# >>> i2 = Item(name="Laptop",price=2500,barcode="134",description="hp laptop")       
+# >>> db.session.add(i2)  
+# >>> db.session.commit()
+# >>> i3 = Item(name="Keyword",price=100,barcode="143",description="Tvs Keyword")     
+# >>> db.session.add(i3)  
+# >>> db.session.commit()
+
+
+>>> item1 = Item.query.filter_by(name="Iphone13") 
+>>> item1
+<flask_sqlalchemy.BaseQuery object at 0x000001D4B7D67BB0>
+>>> item1 = Item.query.filter_by(name="Iphone13").first()
+>>> item1
+Item Iphone13
+>>> item1.owner
+>>> item1.owner = User.query.filter_by(username="spc").first().id
+>>> db.session.add(item1)
+>>> db.session.commit()
+>>> 
+>>> i = Item.query.filter_by(name = "Iphone13").first() 
+>>> i.owned
+>>> i.owner
+1
+>>> i.owned_user
+User spc
