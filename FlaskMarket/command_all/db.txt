@@ -26,3 +26,9 @@ Item Iphone13
 1
 >>> i.owned_user
 User spc
+
+
+>>> import os
+>>> os.urandom(12).hex()
+'68d93959fac0d9455e1947e7'
+>>> exit()
