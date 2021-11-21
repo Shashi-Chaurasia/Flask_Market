@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block body %}
+<h1 class= "h3 mb-3 font-weight:bold my-3" >
+    Register Your Account 
+</h1>
+
+<body class="text-center">
+    <div class="container", id="register_con">
+        <form action="" method="POST" class="form-register" style="color: white">
+            {{ forms.username.label() }}
+            {{forms.username(class = "form-control" , Placeholder="User Name")}}
+
+            {{ forms.email_address.label() }}
+            {{forms.email_address(class = "form-control" , Placeholder="Email Address")}}
+
+            {{ forms.password1.label() }}
+            {{forms.password1(class = "form-control" , Placeholder="Password")}}
+
+            {{ forms.password2.label() }}
+            {{forms.password2(class = "form-control" , Placeholder="Conform Password")}}
+            
+            <br>
+            {{ forms.submit(class = "btn btn-lg btn-block btn-primary") }}
+
+
+        </form>
+    </div>
+</body>
+
+{% endblock %}
